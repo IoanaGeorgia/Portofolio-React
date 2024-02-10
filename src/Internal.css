@@ -1,0 +1,460 @@
+:root {
+  --darkGreen: rgb(6, 34, 6);
+  --darkGreenHighlight: rgb(14, 58, 14);
+  --darkGreenCard: rgb(36, 91, 36);
+  --lighterDarkGreen: rgb(52, 126, 52);
+  --lightGreen: rgba(84, 170, 84, 0.149);
+  --grey: rgb(137, 137, 137);
+  --whiteText: rgb(202, 202, 202);
+  --neonGreen: rgb(140, 213, 70);
+  --subMenuBg: rgb(237, 237, 237);
+  --lighterGrey: rgb(231, 229, 229);
+}
+
+.internalWrapper {
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+}
+.copyIcon {
+  margin-left: 2vh;
+  cursor: pointer;
+}
+button:active.copyIcon {
+  color: var(--neonGreen);
+}
+.sideMenu {
+  height: 100vh;
+  width: 18vw;
+  background-color: var(--darkGreen);
+  padding: 3rem 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.sideMenu > div {
+  width: 100%;
+}
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--grey);
+  font-size: 0.6rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+}
+.logoIcon {
+  font-size: 1.5rem;
+}
+.logo span {
+  margin-left: 0.5rem;
+}
+.sideMenuChoices {
+  display: flex;
+  flex-direction: column;
+}
+.sideMenuChoices button {
+  background-color: transparent;
+  border: none;
+  color: var(--whiteText);
+  text-align: left;
+  font-weight: bolder;
+  width: 100%;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+  padding-left: 0.5rem;
+  font-size: 0.9rem;
+}
+.sideMenuChoices button:hover {
+  background-color: var(--neonGreen);
+  color: var(--darkGreen);
+}
+
+.sideMenuProfile {
+  display: flex;
+  align-items: center;
+  color: var(--whiteText);
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.226);
+}
+.sideMenuProfile img {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 10px;
+}
+.sideMenuProfile div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.sideMenuProfile div * {
+  margin: 0px;
+}
+.sideMenuProfile div p:nth-of-type(1) {
+  font-weight: bold;
+}
+.sideMenuProfile div p:last-of-type {
+  opacity: 40%;
+  font-size: 0.7rem;
+}
+.subMenu {
+  background-color: var(--subMenuBg);
+  width: 24vw;
+}
+.subMenuTitle {
+  padding: 4vh 6vh;
+  padding-bottom: 5vh;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--whiteText);
+}
+.subMenuTitle button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.3rem;
+  padding: 0rem 1rem;
+}
+.subMenuCard {
+  padding: 2vh 6vh;
+  font-size: 1rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--whiteText);
+  position: relative;
+  cursor: pointer;
+}
+.subMenuCardDark {
+  background-color: var(--darkGreenHighlight);
+  color: white !important;
+}
+.subMenuCardDark .subMenuActiveSpan {
+  background-color: white;
+}
+.subMenuCardDark .issuedAccessBadge {
+  color: white;
+  background-color: var(--darkGreenCard);
+}
+.subMenuCardDark .subMenuCardArt {
+  background-color: var(--darkGreenCard);
+  border-color: var(--darkGreen);
+  width: 8rem;
+  height: 5rem;
+  transition: 0.3s width ease-in;
+}
+.subMenuCardDark .subMenuCardArtDetail {
+  background-color: var(--lighterDarkGreen);
+  width: 8rem;
+  transition: 0.3s width ease-in;
+}
+.subMenuCard p {
+  padding: 0px;
+  margin: 0px;
+}
+.subMenuCard p:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.issuedAccessBadge {
+  background-color: var(--whiteText);
+  padding: 0rem 0.4rem;
+  color: black;
+  border-radius: 10%;
+  margin-left: 0.5rem;
+}
+.subMenuActiveSpan {
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background-color: black;
+  margin-right: 0.4rem;
+}
+.subMenuCard p {
+  font-size: 0.8rem;
+}
+.subMenuCard p:last-of-type {
+  color: var(--grey);
+}
+p.subMenuCardTitle {
+  font-size: 1rem;
+}
+.subMenuCardArt {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 6rem;
+  height: 5rem;
+  border-top-left-radius: 16px;
+  border-top: 1px solid var(--whiteText);
+  border-left: 1px solid var(--whiteText);
+  background-color: whitesmoke;
+  transition: 0.3s width ease-in;
+  z-index: 2;
+}
+.subMenuCardArtDetail {
+  width: 6rem;
+  height: 1rem;
+  margin-top: 1rem;
+  background-color: var(--lighterGrey);
+  transition: 0.3s width ease-in;
+  z-index: 2;
+}
+.subMenuCardArt div:last-of-type {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details {
+  padding: 5vh;
+  background-color: white;
+  z-index: 10;
+}
+.detailsLogo {
+  width: 6vh;
+  height: 6vh;
+  background-color: var(--neonGreen);
+  position: relative;
+  display: inline-block;
+}
+.detailsLogo::after {
+  content: "";
+  position: absolute;
+  top: 2vh;
+  left: 1.2vh;
+  width: 3.5vh;
+  height: 2.5vh;
+  background-color: black;
+}
+.detailsHeader span {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-left: 2rem;
+}
+.detailsHeader button {
+  padding: 2vh 3vh;
+  background-color: transparent;
+  border: 2px solid black;
+  font-weight: bold;
+  margin-left: auto;
+}
+.details {
+  width: 60%;
+  overflow-y: scroll;
+}
+.detailsHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.detailsBase div {
+  display: inline-block;
+  padding: 0vh 4vh;
+}
+.detailsBase {
+  border-bottom: 1px solid var(--lighterGrey);
+  padding-bottom: 2vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+.detailsBase > div:nth-of-type(2),
+.detailsBase div:nth-of-type(3) {
+  border-left: 1px solid var(--lighterGrey);
+  border-right: 1px solid var(--lighterGrey);
+}
+.detailsSubtitle .issuedAccessBadge {
+  font-size: 1rem;
+}
+.baseInfo button {
+  border: none;
+  background-color: transparent;
+}
+.baseInfo div {
+  width: 2rem;
+  padding: 0px;
+}
+.baseInfo {
+  font-weight: bolder;
+}
+.cvcText {
+  display: flex;
+  align-items: center;
+  height: 1rem;
+}
+.cvcText > div {
+  padding-right: 10vh;
+}
+.cvcHidden {
+  font-size: 1rem;
+  padding: 0px;
+}
+.generalAmount > div {
+  display: inline-block;
+}
+.generalAmount {
+  padding-bottom: 4vh;
+  border-bottom: 1px solid var(--lighterGrey);
+}
+.generalAmountLimits {
+  width: 60%;
+  padding-right: 5%;
+  box-sizing: border-box;
+}
+.detailsSubtitle {
+  color: var(--darkGreen);
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+.generalAmountLimits > div > p:nth-of-type(1) {
+  text-transform: uppercase;
+  color: var(--grey);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.amountLimitsBar {
+  width: 100%;
+  background-color: var(--lighterGrey);
+  height: 1rem;
+}
+.amountLimitsFullBar {
+  background-color: var(--darkGreen);
+  height: 1rem;
+}
+.amountLimitsInfo {
+  color: var(--darkGreenCard);
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+}
+.generalAmountEstimations p:nth-of-type(1) {
+  width: 50%;
+  font-size: 1.1rem;
+}
+.generalAmountEstimations {
+  padding: 0px;
+  padding-left: 4vh;
+  background-color: var(--lightGreen);
+  width: 40%;
+  position: relative;
+}
+.generalAmountEstimations p:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  color: var(--darkGreenCard);
+  font-weight: bolder;
+}
+.amountEstimationsIcon {
+  padding: 0vh 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.generalAmountEstimations::before {
+  content: "";
+  height: 60%;
+  width: 30%;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  background-color: var(--lighterGrey);
+  border-top-left-radius: 70%;
+  z-index: 1;
+}
+.issuedDetails {
+  padding-bottom: 4vh;
+  border-bottom: 1px solid var(--lighterGrey);
+}
+.issuedWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  justify-content: space-between;
+}
+
+.issuedWrapper p:nth-of-type(2) {
+  color: var(--grey);
+}
+.issuedWrapper > p:last-of-type {
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.issuedSubtitle {
+  font-weight: bolder;
+}
+.messageIcon {
+  padding-left: 4vh;
+  cursor: pointer;
+}
+.issuedBadge {
+  background-color: var(--lighterGrey);
+  padding: 1vh;
+  color: black;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-left: 2vh;
+}
+.loadingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--whiteText);
+  font-weight: bold;
+  background-color: var(--lighterGrey);
+}
+.loader {
+  width: 4rem;
+  height: 4rem;
+  margin-top: 2rem;
+  border-radius: 50%;
+  border: 0.5rem dashed var(--neonGreen);
+  animation: rotateLoader 2s infinite linear;
+}
+.loadingWrapper p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loadingWrapper span {
+  animation: blip 600ms infinite;
+}
+@keyframes rotateLoader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes blip {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100%;
+  }
+  to {
+    opacity:0;
+  }
+
+}
