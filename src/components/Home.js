@@ -59,6 +59,7 @@ function Home(){
             <div className='homeSocials'>
               <Link to='/eccomerce'>E-Commerce </Link>
               <Link to='/internalTool'>Internal Banking App</Link>
+              <Link to='./blog'>Blog</Link>
             </div>
           </div>
 

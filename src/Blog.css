@@ -1,0 +1,304 @@
+.blogWrapper {
+  padding: 3vh;
+  color: var(--darkColor);
+  letter-spacing: 0.5px;
+  font-size: var(--normalFontSize);
+}
+:root {
+  --normalFontSize: 16px;
+  --lgNormalFontSize: 18px;
+  --titleFontSize: 30px;
+  --subtitlesFontSize: 22px;
+  --darkColor: rgb(5, 2, 26);
+  --grey: rgb(172, 171, 171);
+  --buttonTransDuration:300ms;
+}
+*,
+p,
+div {
+  margin: 0px;
+  padding: 0px;
+}
+button{
+  transition: var(--buttonTransDuration)
+}
+button:hover{
+  color:var(--grey);
+}
+p {
+  margin: 0.5rem 0px;
+}
+.blogHeader {
+  color: var(--darkColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blogLogo {
+  font-size: var(--subtitlesFontSize);
+  font-weight: bold;
+  position: relative;
+  color: var(--darkColor);
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blogLogo::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--darkColor);
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  right: 102%;
+}
+.blogHeader > :last-child {
+  font-size: 24px;
+  cursor: pointer;
+}
+.blogTitle {
+  color: var(--grey);
+  font-style: italic;
+  font-size: var(--titleFontSize);
+  margin-top: 10vh;
+}
+.blogTags button {
+  border: 2px solid var(--darkColor);
+  background-color: transparent;
+  padding: 0.7vh 1vh;
+  border-radius: 15px;
+  margin-right: 1vh;
+  font-size: calc(var(--normalFontSize) - 3px);
+  margin-top: 2vh;
+  transition-duration: var(--buttonTransDuration);
+}
+.blogTags button:hover{
+  border-color:var(--grey)
+}
+.blogTitleSecondary {
+  font-size: calc(var(--titleFontSize) + 3px);
+  font-weight: 700;
+}
+.blogMainDescription {
+  margin-top: 3vh;
+}
+.blogDescription {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blogDescription > div p:first-of-type {
+  font-style: italic;
+  font-size: calc(var(--normalFontSize) - 2px);
+}
+.blogDescription > div p {
+  font-size: calc(var(--normalFontSize) + 1px);
+}
+.blogImage {
+  width: 100%;
+  margin: 4vh 0px;
+}
+p.contentSubtitle {
+  font-size: var(--subtitlesFontSize);
+  padding-top: 10vh;
+  font-weight: 700;
+}
+.blogContent p:not(.contentSubtitle) {
+  margin: 3vh 0px;
+}
+.contentQuote {
+  font-size: var(--subtitlesFontSize);
+  font-style: italic;
+  font-weight: 600;
+  border-left: 2px solid var(--grey);
+  padding: 2vh;
+}
+.contentQuoteAuthor {
+  font-size: calc(var(--normalFontSize) - 4px);
+}
+.contentImage {
+  width: 100%;
+}
+.blogHeaderLinks,
+.blogProfileLogo,
+.blogContentSummary {
+  display: none;
+}
+.blogImageCircle {
+  display: none;
+}
+.mobileMenuWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.919);
+  box-sizing: border-box;
+  padding-bottom: 16vh;
+}
+.mobileMenuWrapper button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.4rem;
+}
+.mobileMenuWrapper p button {
+  position: absolute;
+  top: 4vh;
+  right: 4vh;
+  font-size: 1rem;
+}
+.mobileMenuWrapper button:hover {
+  color: var(--grey);
+}
+
+@media (min-width: 600px) {
+  .blogHeaderLinks,
+  .blogProfileLogo {
+    display: block;
+  }
+  .blogProfileLogo {
+    cursor: pointer;
+    transition: var(--buttonTransDuration);
+  }
+  .blogProfileLogo :hover{
+    color:var(--grey)
+  }
+  .mobileMenuIcon {
+    display: none;
+  }
+  .blogHeaderLinks > button {
+    border: none;
+    background-color: transparent;
+    margin: 0px 2vh;
+    cursor: pointer;
+    font-size: calc(var(--normalFontSize) + 1px);
+    cursor: pointer;
+  }
+  .blogDescription > div:nth-of-type(2) {
+    margin-left: 5vh;
+  }
+  .blogInfoWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .mobileMenuWrapper {
+    display: none;
+  }
+}
+@media (min-width: 1000px) {
+  .blogWrapper {
+    padding: 3vh 10vh;
+    font-size: var(--lgNormalFontSize);
+  }
+  .blogHeaderLinks {
+    margin-left: 5vh;
+  }
+  .blogHeaderLinks button {
+    margin: 0px 4vh;
+  }
+  .blogImage {
+    position: absolute;
+    width: 35vw;
+    height: 80vh;
+    right: 10vh;
+    top: 10vh;
+  }
+  main > p {
+    width: 50%;
+  }
+  .contentQuoteAuthor {
+    font-size: var(--normalFontSize);
+  }
+  .blogTitle {
+    margin-top: 10%;
+  }
+
+  .blogDescription {
+    position: absolute;
+    left: calc(100% - 40%);
+    top: 95vh;
+  }
+
+  .blogContent {
+    width: 50%;
+  }
+  .blogContentSummary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 40%;
+    width: 40%;
+    box-sizing: border-box;
+    padding-left: 15%;
+    position: sticky;
+    top: 20vh;
+  }
+  .blogContentSummary button {
+    border: none;
+    background-color: transparent;
+    margin: 2vh 0px;
+    font-weight: 500;
+    font-size: var(--lgNormalFontSize);
+    cursor: pointer;
+  }
+  .blogContentSummary p {
+    font-style: italic;
+    font-size: calc(var(--lgNormalFontSize) - 1px);
+    margin-bottom: 2vh;
+  }
+  .blogContentMainWrapper {
+    margin-top: 30%;
+    display: flex;
+    align-items: baseline;
+  }
+  .blogTitle {
+    font-size: calc(var(--titleFontSize) + 10px);
+  }
+  .blogTitleSecondary {
+    font-size: calc(var(--titleFontSize) + 10px);
+  }
+  .blogTags button {
+    font-size: var(--normalFontSize);
+    padding: 1vh 2vh;
+    border-radius: 20px;
+  }
+  p.contentSubtitle {
+    font-size: calc(var(--lgNormalFontSize) + 10px);
+  }
+  .blogDescription > div p:first-of-type {
+    font-size: calc(var(--normalFontSize) + 1px);
+  }
+  .blogContentMainWrapper {
+    padding-bottom: 30vh;
+  }
+  p {
+    margin: 1rem 0px;
+  }
+  .blogCircleImage {
+    display: block;
+    position: absolute;
+    top: 75vh;
+    height: 50%;
+    width: 40%;
+  }
+  .circle {
+    width: 100%;
+    height: calc(100% / 6);
+    border: 1px solid var(--darkColor);
+    border-radius: 50%;
+    margin-top: -10vh;
+  }
+  .circle:first-of-type {
+    margin-top: 20vh;
+  }
+}

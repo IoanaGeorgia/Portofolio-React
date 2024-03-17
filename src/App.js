@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import Eccomerce from './components/Eccomerce';
 import Internal from './components/Internal';
+import Blog from './components/Blog'
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
 
       <Route exact path='/internalTool' element={ <Internal />} />
 
+      <Route exact path='/blog' element ={ <Blog />} />
+      
       </Routes>
     </Router>
     </div>
