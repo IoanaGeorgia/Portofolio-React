@@ -9,7 +9,7 @@ import Blog from './components/Blog'
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route exact path="/" element={<Home />} />
 
@@ -21,9 +21,6 @@ function App() {
         </Routes>
       </Router>
 
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <App />
-      </BrowserRouter>
     </div>
   );
 }
