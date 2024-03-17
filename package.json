@@ -1,8 +1,8 @@
 {
   "name": "portofolio",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://ioanageorgia.github.io/Portofolio-React/",
+  "private": false,
+  "homepage": "https://ioanageorgia.github.io/Portofolio-React",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-regular-svg-icons": "^6.5.1",

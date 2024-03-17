@@ -9,21 +9,21 @@ import Blog from './components/Blog'
 function App() {
   return (
     <div className="App">
-    
-    <Router>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
 
-      <Routes>
+          <Route exact path="/eccomerce" element={<Eccomerce />} />
 
-      <Route exact path='/' element={<Home />} />
+          <Route exact path="/internalTool" element={<Internal />} />
 
-      <Route exact path='/eccomerce' element ={<Eccomerce />} />
+          <Route exact path="/blog" element={<Blog />} />
+        </Routes>
+      </Router>
 
-      <Route exact path='/internalTool' element={ <Internal />} />
-
-      <Route exact path='/blog' element ={ <Blog />} />
-      
-      </Routes>
-    </Router>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <App />
+      </BrowserRouter>
     </div>
   );
 }
