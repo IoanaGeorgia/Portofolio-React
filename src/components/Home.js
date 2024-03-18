@@ -56,10 +56,11 @@ function Home(){
 
             <p>In-App links:</p>
 
-            <div className='homeSocials'>
+            <div className='homeSocials projects'>
               <Link to='/eccomerce'>E-Commerce </Link>
               <Link to='/internalTool'>Internal Banking App</Link>
               <Link to='./blog'>Blog</Link>
+              <Link to='./plantShop'>PlantShop</Link>
             </div>
           </div>
 

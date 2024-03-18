@@ -120,14 +120,20 @@ html[data-theme='light'] {
 .homeWrapperLinks a:hover{
   color:var(--hightlight)
 }
-.homeSocials{
+.projects, .homeSocials{
   display: flex;
   justify-content: space-evenly;
   margin-top:4em;
   padding-bottom:3em;
   
 }
-
+.projects{
+  flex-direction: column;
+  align-items: center;
+}
+.projects > *{
+  margin-top: 2vh;
+}
 @media (max-width:800px) {
   .homeWrapper, .homeWrapperMain{
     height:fit-content;
