@@ -14,14 +14,74 @@ import plant5 from '../assets/plant5.PNG'
 import plant6 from "../assets/plant6.PNG";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 function PlantShop() {
-  const [isOpen1, toggleDescription1] = useState(false);
-  const [isOpen2, toggleDescription2] = useState(false);
+  const [shoppingCart, setShoppingCart] = useState([]);
+  const [isOpenCart, openCart] = useState(false);
 
   //dribbble.com/shots/22189563-Shop-Website-Design
   let plantImages=  [plant1, plant2, plant3, plant4, plant5, plant6]
 
+
+  function eliminateItem(data){
+    let tempElimArr = shoppingCart.filter(function (el) {
+      return el.name != data.name;
+    }); 
+    setShoppingCart(tempElimArr)
+  }
+
+  function addToCart(data){
+    
+    if(shoppingCart.length === 0){
+      setShoppingCart([data])
+    }
+    if(shoppingCart.length > 0){
+
+       const isDuplicate = shoppingCart.some((item) => item.name === data.name);
+       
+
+          if(!isDuplicate){
+            setShoppingCart([...shoppingCart, data]);
+          }
+          else{
+            setShoppingCart([...shoppingCart])
+          }
+    } 
+
+     
+  }
+
+
   return (
-    <>
+    <div className="ps_mainWrapper">
+      {isOpenCart ? <div className="ps_cart">
+       <p className="ps_cartTitle">Dear A., you cart contains the following items:</p>
+        {
+          shoppingCart.length ? <div>
+            
+            {shoppingCart.map((data, index) => {
+              return (
+                  <div key={index} className="ps_cartProduct">
+                    <span>
+                      <div>{index}</div>
+                      <div>{data.name}</div>
+                      </span>
+                      <span>
+                        <div>${data.price}</div>
+                        <input type='number' placeholder='1' value={1}></input>
+                        <button onClick={()=>eliminateItem(data)}>x</button>
+                      </span>
+                    </div>
+                    
+              )
+            })}
+
+
+          </div> : <div className="ps_cartEmpty">Your cart is empty.</div>
+        }
+        <div className='ps_cartFooter'>
+          <p>Number of items: {shoppingCart.length}</p>
+          <button>Order</button>
+        </div>
+      </div> : ""}
       <div className="ps_wrapper">
         <div className="ps_landing">
           <div className="ps_header">
@@ -34,7 +94,7 @@ function PlantShop() {
               <a>My Vase</a>
               <a>About Us</a>
               <button>
-                <FontAwesomeIcon icon={faUser} />
+                <FontAwesomeIcon onClick={() => openCart(true)} icon={faUser} />
               </button>
             </span>
           </div>
@@ -70,35 +130,37 @@ function PlantShop() {
             </div>
           </div>
         </div>
-
         <div className="ps_productArea">
           <p className="ps_defaultLimit">Products</p>
-          <div className='ps_products'>
-          {plantData.map((data, index) =>{
-            return (
-              <div key={index} className="ps_product">
-                <div>
-                  <img src={`${plantImages[index]}`} />
-                </div>
-                <p>
-                  {data.name} <span>${data.price}</span>
-                </p>
-                
-                <div className='ps_productTags'>
-                {data.tags.map((tag) => (
-                  <div key={tag} className="ps_productTag">
-                    {tag}
+          <div className="ps_products">
+            {plantData.map((data, index) => {
+              return (
+                <div key={index} className="ps_product">
+                  <div>
+                    <img src={`${plantImages[index]}`} />
                   </div>
-                ))}
+                  <p>
+                    {data.name} <span>${data.price}</span>
+                  </p>
+
+                  <div className="ps_productTags">
+                    {data.tags.map((tag) => (
+                      <div key={tag} className="ps_productTag">
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="ps_productTags">
+                    <button onClick={() => addToCart(data)}> Buy </button>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
           </div>
         </div>
       </div>
-      gg
-    </>
+     
+    </div>
   );
 }
 
