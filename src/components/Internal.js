@@ -24,10 +24,8 @@ function Internal() {
   }
 
   function seeCVC() {
-    console.log("touched fucntion");
     let info = !cardInfo.seeCVC;
     changeCardInfo({ ...cardInfo, seeCVC: info });
-    console.log("end funciton");
   }
 
   function formatPercentAmount() {

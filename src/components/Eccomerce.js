@@ -13,8 +13,6 @@ function Eccomerce(){
     const [isOpen2, toggleDescription2] = useState(false);
     const [isOpen3, toggleDescription3] = useState(false);
 
-
-
     const [index, changeIndex] = useState(2);
     const [logo, changeLogo] = useState(logo2)
     

@@ -37,7 +37,7 @@
 .ps_header a:visited {
   color: white;
   font-size: var(--normalSize);
-  margin-left: 4rem;
+  margin-left: 5vw;
   transition: 200ms;
   cursor: pointer;
 }
@@ -60,7 +60,7 @@
   letter-spacing: 2px;
 }
 .ps_mainLanding > div {
-  width: 50%;
+  min-width: 50%;
   position: relative;
 }
 
@@ -111,12 +111,14 @@
   margin-top: 60%;
   margin-left: 5%;
   line-height: 150%;
+  z-index: 50;
+  position: relative;
 }
 .ps_info {
   padding: 5vh 10vh;
   padding-right: 20vh;
 }
-.ps_info > p {
+.ps_infoSubtitle {
   font-size: var(--subTitleSize);
   color: var(--darkGreen);
 }
@@ -179,12 +181,13 @@
   margin-top: 10%;
   display: grid;
   grid-template-columns: auto auto;
-  gap: 15rem;
-  padding: 12vh;
+  column-gap: 20%;
+  row-gap: 8%;
+  padding: 6%;
 }
 .ps_product {
-  width: 25rem;
-  height: 40rem;
+  width: 80%;
+  height: 40%;
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
   position: relative;
@@ -197,7 +200,7 @@
 }
 .ps_product:before {
   content: "";
-  width: 25rem;
+  width: 110%;
   height: 40rem;
   position: absolute;
   top: 1rem;
@@ -228,11 +231,12 @@
   border-radius: 15px;
   width: fit-content;
   padding: 0.5vh 2vh;
+  margin: 0.5rem;
 }
 .ps_productTags {
   display: flex;
   justify-content: space-evenly;
-  margin-left: 2rem;
+  margin-left: 3rem;
   margin-top: 4%;
 }
 .ps_productTags button {
@@ -264,10 +268,12 @@
   position: absolute;
   top: 0px;
   left: 0px;
+  width: 100%;
+  height: 100%;
 }
 .ps_mainWrapper {
   position: relative;
-  height: 600vh;
+  min-height: 721vh;
 }
 .ps_cartTitle {
   color: white;
@@ -304,8 +310,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 60%;
-  margin-left: 20%;
+  width: 70%;
+  margin-left: 10%;
   margin-top: 5%;
   color: white;
 }
@@ -324,4 +330,419 @@
   color: white;
   font-size: var(--titleSize);
   margin-left: 2vw;
+}
+.ps_cartClose {
+  float: right;
+  border: none;
+  padding-right: 6vh;
+  background-color: transparent;
+  font-size: calc(var(--titleSize) + 5px);
+  color: var(--orange);
+}
+.ps_cartClose:hover {
+  color: var(--lightGreen);
+}
+
+.ps_alert {
+  position: sticky;
+  top: 4vh;
+  left: 68vw;
+  height: 20vh;
+  width: 30vw;
+  z-index: 200;
+  backdrop-filter: blur(100px);
+  background-color: white;
+  box-sizing: border-box;
+  padding: 5vh;
+  color: var(--orange);
+  border-radius: 17px;
+  font-size: 1.2em;
+  border: 10px solid var(--lightGreen);
+}
+.ps_cartProduct img {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 3rem;
+}
+/* .ps_slide-enter {
+    max-width: 0;
+    overflow: hidden;
+}
+.ps_slide-enter-active {
+    max-width: 80px;
+    transition: max-width .3s ease;
+}
+.ps_slide-leave {
+    max-width: 80px;
+}
+.ps_slide-leave-active {
+    max-width: 0;
+    transition: max-width .3s ease;
+    overflow: hidden;
+} */
+
+.content-enter {
+  width: 0;
+  overflow: hidden;
+}
+
+.content-enter-active {
+  width: 200px; /* Adjust width according to your requirement */
+  transition: width 0.3s ease-in-out;
+}
+
+.content-exit {
+  width: 200px; /* Adjust width according to your requirement */
+}
+
+.content-exit-active {
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.ps_myVase {
+  padding: 5vh 10vh;
+  padding-right: 20vh;
+  width: 100%;
+  padding-top: 20%;
+}
+.ps_myVase .ps_infoSubtitle {
+  margin-top: 1vh;
+}
+.ps_myVaseText {
+  color: var(--darkGreen);
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15vh auto;
+  margin-top: 5vh;
+}
+.ps_myVaseText p {
+  text-align: center;
+  width: 30%;
+  margin-right: 20vh;
+}
+.ps_myVaseImage {
+  height: 25rem;
+  width: 15rem;
+  border: 6px solid var(--darkGreen);
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  margin-left: 30vh;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 550;
+}
+.ps_myVaseImage::after {
+  content: "";
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
+  height: 25rem;
+  width: 15rem;
+  border: 2px solid var(--lightGreen);
+  z-index: 100;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+}
+.ps_myVaseContact {
+  display: flex;
+}
+.ps_myVaseContact > div {
+  width: 50%;
+  font-size: var(--titleSize);
+  color: var(--darkGreen);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10vh;
+  font-weight: bold;
+  position: relative;
+}
+.ps_myVaseContact > div:last-of-type {
+  align-items: flex-start;
+  /* margin-left: 10vh; */
+}
+.ps_myVaseContact > div span {
+  font-weight: normal;
+}
+.ps_myVaseCopy {
+  font-size: calc(var(--titleSize) - 5px);
+  color: grey;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.ps_myVaseCopyActive {
+  color: var(--orange);
+}
+.tooltip {
+  border: 1px solid var(--lightGreen);
+  color: var(--lightGreen);
+  width: min-content;
+  height: min-content;
+  font-size: calc(var(--normalSize) - 5px);
+  padding: 0.5rem;
+  border-radius: 5px;
+  right: -5%;
+  top: 2%;
+  position: relative;
+}
+.ps_footer {
+  background-color: var(--darkGreen);
+  width: 100%;
+  height: 50vh;
+  padding: 10vh;
+  padding-bottom: 50vh;
+  padding-right: 20vh;
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.ps_footer div {
+  width: 60%;
+  color: var(--orange);
+  font-size: calc(var(--titleSize) - 2px);
+  line-height: 200%;
+}
+.ps_footer span p {
+  color: var(--lightGreen);
+}
+.ps_footer span p:hover {
+  color: var(--orange);
+  cursor: pointer;
+}
+.ps_footer span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+/* .ps_myVaseContact form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.ps_myVaseContact form {
+  width: 100%;
+  height: 100%;
+}
+.ps_myVaseContact form label:last-of-type {
+  margin-top: 5vh;
+}
+.ps_myVaseContact form input {
+  margin-top: 2%;
+  padding: 1vh;
+  outline: none;
+  border: 2px solid var(--lightGreen);
+  font-size: calc(var(--titleSize) - 2px);
+} */
+@media (max-width: 1500px) {
+  .ps_mainLanding > div:last-of-type p:last-of-type {
+    backdrop-filter: blur(10px);
+    background-color: #1e2920d6;
+    padding: 2vh;
+  }
+  .ps_products {
+    column-gap: 10%;
+    padding: 0%;
+  }
+  .ps_myVaseText p {
+    backdrop-filter: blur(10px);
+    background-color: var(--lightGreen);
+    margin-right: 15%;
+  }
+  .ps_myVase {
+    padding-right: 10vh;
+    padding-top: 0vh;
+    margin-top: 50vh;
+  }
+  .ps_myVaseContact > div:first-of-type {
+    width: 40%;
+    padding-right: 10vh;
+  }
+  .ps_myVaseContact > div {
+    width: 60%;
+    padding-right: 0vh;
+  }
+  .ps_mainLandingPic img {
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+  }
+}
+@media (max-width: 1000px) {
+  .ps_mainLanding > div:last-of-type p:last-of-type {
+    top: 5vh;
+    border: 2px solid var(--lightGreen);
+  }
+  .ps_products {
+    column-gap: 10%;
+    padding: 0%;
+    grid-template-columns: auto;
+    row-gap: 5%;
+  }
+  .ps_product {
+    width: 70%;
+    margin-left: 10%;
+  }
+
+  .ps_myVaseText p {
+    backdrop-filter: blur(10px);
+    background-color: var(--lightGreen);
+    margin-right: 15%;
+    margin-top: 10%;
+    padding: 2rem;
+    width: 40%;
+  }
+  .ps_myVase {
+    margin-top: 130%;
+  }
+
+  .ps_myVaseText {
+    position: relative;
+    height: 60vh;
+    margin-left: 20vh;
+    margin-top: 10vh;
+  }
+  .ps_myVaseImage {
+    margin-left: 10%;
+    width: 30vh;
+    z-index: -1;
+  }
+  .ps_myVaseText > * {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+  .ps_myVaseText p {
+    width: 60%;
+  }
+
+  .ps_mainTitle {
+    left: -35vw;
+  }
+  .ps_info {
+    padding-right: 10vh;
+  }
+  .ps_infoContent p {
+    margin-left: 5%;
+  }
+
+  .ps_myVaseContact {
+    display: flex;
+    flex-direction: column;
+  }
+  .ps_myVaseContact > div {
+    width: 100%;
+    padding-right: 0vh;
+  }
+  .ps_myVaseContact > div:first-of-type {
+    width: 100%;
+  }
+  .ps_myVaseContact > div:last-of-type {
+    padding-left: 15vh;
+  }
+  .ps_footer {
+    margin-right: 10vh;
+    padding-right: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10%;
+    padding-bottom: 0vh;
+  }
+  .ps_footer * {
+    text-align: center;
+  }
+  .ps_footer span {
+    align-items: center;
+  }
+  .ps_alert {
+    width: 70%;
+    height: 10%;
+  }
+}
+
+@media (max-width: 785px) {
+  .ps_header span {
+    display: none;
+  }
+  .ps_mainTitle {
+    left: -30vh;
+    font-size: calc(var(--subTitleSize) + 15px);
+  }
+  .ps_mainLanding > div:last-of-type p:last-of-type {
+    margin-top: 160%;
+    width: 170%;
+    margin-left: -40%;
+  }
+  .ps_info {
+    padding: 10vh 2vh;
+  }
+  .ps_infoContent {
+    flex-direction: column;
+  }
+  .ps_infoContent p {
+    width: 80%;
+    margin: 10%;
+    margin-bottom: 30%;
+  }
+  .ps_productArea {
+    margin: 10vh 5vh;
+  }
+  .ps_myVase {
+    margin-top: 100vh;
+    padding: 10vh 2vh;
+  }
+  .ps_myVaseText {
+    margin-left: 15%;
+  }
+  .ps_myVaseText p {
+    width: 80%;
+  }
+  .ps_myVaseContact > div:last-of-type {
+    padding-left: 5vh;
+  }
+  .ps_footer {
+    padding: 2vh 5vh;
+  }
+  .ps_footer div {
+    width: 100%;
+  }
+  .ps_product {
+    margin-left: 5%;
+  }
+  .ps_product img {
+    height: 25rem;
+  }
+  .ps_product::before {
+    height: 35rem;
+  }
+  .ps_product p span {
+    margin-left: -1vh;
+  }
+}
+
+@media (max-width:400px){
+  body{
+    overflow-x: hidden;
+  }
+    .ps_product {
+    margin-left: -2%;
+  }
+    .ps_myVaseContact > div:last-of-type {
+    padding-left: 0vh;
+  }
+    .ps_myVaseText p {
+    width: 90%;
+    margin-left:-5%;
+  }
+  .ps_myVaseCopy{
+    display: none;
+  }
+  .ps_myVaseImage{
+    margin-left:-5%;
+  }
 }
