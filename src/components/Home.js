@@ -49,18 +49,21 @@ function Home(){
               <a href="https://github.com/IoanaGeorgia" target="_blank">
                 GitHub
               </a>
-              <a href="https://github.com/IoanaGeorgia" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/ioana-pascu-b42091216/"
+                target="_blank"
+              >
                 LinkedIn
               </a>
             </div>
 
             <p>In-App links:</p>
 
-            <div className='homeSocials projects'>
-              <Link to='/eccomerce'>E-Commerce </Link>
-              <Link to='/internalTool'>Internal Banking App</Link>
-              <Link to='./blog'>Blog</Link>
-              <Link to='./plantShop'>PlantShop</Link>
+            <div className="homeSocials projects">
+              <Link to="/eccomerce">E-Commerce </Link>
+              <Link to="/internalTool">Internal Banking App</Link>
+              <Link to="./blog">Blog</Link>
+              <Link to="./plantShop">PlantShop</Link>
             </div>
           </div>
 

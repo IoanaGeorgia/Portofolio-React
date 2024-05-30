@@ -120,7 +120,7 @@ button {
   justify-content: space-between;
   align-items: center;
 }
-.mainPicture {
+/* .mainPicture {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,6 +130,17 @@ button {
   border-bottom: 3em solid black;
   transform: rotate(10deg);
   border-radius: 50%;
+  margin-top: -3%;
+} */
+.mainPicture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-height: 50vh;
+  border-top: 3em solid black;
+  border-bottom: 3em solid black;
+  transform: rotate(10deg);
   margin-top: -3%;
 }
 
@@ -147,6 +158,13 @@ button {
   color: var(--lighterDark);
   font-size: 0.8rem;
   transition: 3s;
+  padding-top:0.2rem;
+  padding-bottom: 0.5rem;
+  padding-left:1rem;
+  width:90%;
+}
+.descriptionOpen div{
+  padding-bottom:0.2rem;
 }
 .buyButton {
   background-color: var(--accentColor);
@@ -163,6 +181,9 @@ button {
   height: 60vh;
   position: relative;
 }
+.mainDescription h2{
+  margin-top:1.5rem;
+}
 .closeDescription {
   transform: rotate(45deg);
 }
@@ -174,6 +195,8 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bolder;
+  margin-left:0.5rem;
 }
 .descriptionDetail button {
   background-color: transparent;
