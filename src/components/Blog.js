@@ -3,17 +3,14 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareCaretDown, faUser } from "@fortawesome/free-regular-svg-icons";
 import blog from "../assets/blog.PNG";
-import blog_bg from "../assets/blog_bg.PNG";
+import blog_bg from "../assets/blog_bg.jpg";
 function Blog() {
-
-
-
-      const [isMobileMenuVisible, setMobileMenu] = useState(false);
+  const [isMobileMenuVisible, setMobileMenu] = useState(false);
 
   function scrollToSection(targetId) {
-    const targetElement = document.getElementById(targetId); // Get the target element
+    const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" }); // Scroll to the target element
+      targetElement.scrollIntoView({ behavior: "smooth" });
     }
   }
   return (
@@ -72,6 +69,7 @@ function Blog() {
         </div>
 
         <img className="blogImage" src={blog}></img>
+
         <div className="blogInfoWrapper">
           <div className="blogDescription">
             <div>

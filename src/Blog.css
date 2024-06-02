@@ -99,7 +99,9 @@ p {
 .blogImage {
   width: 100%;
   margin: 4vh 0px;
+  border-right:1.5rem solid black;
 }
+
 p.contentSubtitle {
   font-size: var(--subtitlesFontSize);
   padding-top: 10vh;
@@ -120,7 +122,9 @@ p.contentSubtitle {
 }
 .contentImage {
   width: 100%;
+  max-height:22rem;
 }
+
 .blogHeaderLinks,
 .blogProfileLogo,
 .blogContentSummary {
@@ -194,6 +198,11 @@ p.contentSubtitle {
     display: none;
   }
 }
+@media (min-width:1001px) and (max-width:1200px){
+  .blogImage{
+    width:40%!important;
+  }
+}
 @media (min-width: 1000px) {
   .blogWrapper {
     padding: 3vh 10vh;
@@ -207,7 +216,7 @@ p.contentSubtitle {
   }
   .blogImage {
     position: absolute;
-    width: 35vw;
+    width: 33rem;
     height: 80vh;
     right: 10vh;
     top: 10vh;

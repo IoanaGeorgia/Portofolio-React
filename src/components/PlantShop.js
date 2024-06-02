@@ -233,8 +233,10 @@ function PlantShop() {
           </div>
         </div>
 
-        <div id="ps_myVase" className="ps_myVase">
-          <p className="ps_infoSubtitle">My Vase</p>
+        <div className="ps_myVase">
+          <p id="ps_myVase" className="ps_infoSubtitle">
+            My Vase
+          </p>
           <div className="ps_myVaseText">
             <div className="ps_myVaseImage"></div>
             <p>

@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { useRef } from "react";
 import {Link} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faGem, faUser, faCreditCard, faMessage} from '@fortawesome/free-regular-svg-icons'
@@ -72,6 +73,35 @@ function Eccomerce(){
       },
     };
 
+
+    function hoverBackground(event){
+      if(!window.matchMedia('(max-width:900px').matches)
+        {
+     event.target.classList.add('hoverableAreaClass')
+     let walk = 50
+         const width = event.target.offsetWidth;
+         const height = event.target.offsetHeight;
+         const clientX= event.clientX
+         const clientY = event.clientY
+
+             const xWalk = Math.round((clientX / width) * walk - walk / 2);
+             const yWalk = Math.round((clientY / height) * walk - walk / 2);
+        event.target.style.marginLeft = xWalk + 'px'
+        event.target.style.marginTop = yWalk + 'px'
+        
+    }
+  }
+
+    function hoverBackgroundOut(event){
+            if(!window.matchMedia('(max-width:900px').matches)
+        {
+      event.target.style.transitionDuration = '0.1s'
+                event.target.style.marginLeft = "0px";
+                event.target.style.marginTop = "0px";
+    }
+  }
+
+
     const [perfumeInfo, changePerfumeInfo] = useState(productInfo.perfume2);
 
     function changePic(nr){
@@ -103,7 +133,7 @@ function Eccomerce(){
     return (
       <div className="mainWrapper">
         <div className="header">
-          <div className="logo">
+          <div className="ecc_logo">
             <span>
               <FontAwesomeIcon icon={faGem} />
             </span>
@@ -148,18 +178,142 @@ function Eccomerce(){
             </div>
           </div>
 
-          <TransitionGroup className="mainPicture">
+          <TransitionGroup className="pictureArea">
+            <div
+              className="mainPicture"
+              onMouseMove={(e) => hoverBackground(e)}
+              onMouseOut={(e) => hoverBackgroundOut(e)}
+            ></div>
             <CSSTransition
               in={true}
               appear={true}
               key={index}
               classNames="slide"
             >
-              <img key={index} src={logo}></img>
+              <img
+                key={index}
+                src={logo}
+                onMouseOver={(e) => e.stopPropagation()}
+              ></img>
             </CSSTransition>
           </TransitionGroup>
 
           <div className="mainDescription">
+            <div
+              className={
+                isOpen1 ? "descriptionDetail openWide" : "descriptionDetail"
+              }
+            >
+              <div>
+                <span>Description</span>
+                <button
+                  onClick={() => toggleDescription1(!isOpen1)}
+                  className={isOpen1 ? "closeDescription" : ""}
+                >
+                  +
+                </button>
+              </div>
+              <TransitionGroup>
+                <CSSTransition
+                  in={true}
+                  appear={true}
+                  key={isOpen1}
+                  classNames="slideText"
+                >
+                  <>
+                    {isOpen1 && (
+                      <div className="descriptionOpen">
+                        {perfumeInfo.description}
+                      </div>
+                    )}
+                  </>
+                </CSSTransition>
+              </TransitionGroup>
+            </div>
+
+            <div
+              className={
+                isOpen2 ? "descriptionDetail openWide" : "descriptionDetail"
+              }
+            >
+              <div>
+                <span>Reviews</span>
+                <button
+                  onClick={() => toggleDescription2(!isOpen2)}
+                  className={isOpen2 ? "closeDescription" : ""}
+                >
+                  +
+                </button>
+              </div>
+              <TransitionGroup>
+                <CSSTransition
+                  in={true}
+                  appear={true}
+                  key={isOpen2}
+                  classNames="slideText"
+                >
+                  <>
+                    {isOpen2 && (
+                      <div className="descriptionOpen">
+                        {perfumeInfo.reviews.map(function (data) {
+                          return (
+                            <div key={Object.keys(data)}>
+                              {Object.values(data)} - <i>{Object.keys(data)}</i>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </>
+                </CSSTransition>
+              </TransitionGroup>
+            </div>
+
+            <div
+              className={
+                isOpen3 ? "descriptionDetail openWide" : "descriptionDetail"
+              }
+            >
+              <div>
+                <span>Product faq</span>
+                <button
+                  onClick={() => toggleDescription3(!isOpen3)}
+                  className={isOpen3 ? "closeDescription" : ""}
+                >
+                  +
+                </button>
+              </div>
+              <TransitionGroup>
+                <CSSTransition
+                  in={true}
+                  appear={true}
+                  key={isOpen3}
+                  classNames="slideText"
+                >
+                  <>
+                    {isOpen3 && (
+                      <div className="descriptionOpen">
+                        {perfumeInfo.productFaq.map(function (data) {
+                          return (
+                            <div key={data[0]}>
+                              <b>{data[0]}</b>
+                              <div>{data[1]} </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </>
+                </CSSTransition>
+              </TransitionGroup>
+            </div>
+
+            <h2>Start from $160</h2>
+            <button className="buyButton">Buy now</button>
+          </div>
+
+          {/* 
+           <div className="mainDescription">
             <div className="descriptionDetail">
               <div>
                 <span>Description</span>
@@ -259,7 +413,7 @@ function Eccomerce(){
 
             <h2>Start from $160</h2>
             <button className="buyButton">Buy now</button>
-          </div>
+          </div> */}
         </div>
 
         <div className="footer">
@@ -284,9 +438,7 @@ function Eccomerce(){
             </button>
           </div>
 
-          {/* <div className='footerSocials'>
 
-        </div> */}
         </div>
       </div>
     );
