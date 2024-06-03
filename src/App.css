@@ -17,11 +17,12 @@ html[data-theme='light'] {
     --hightlight:rgb(221, 77, 77);
 }
 .homeWrapper{
-  height:150vh;
+  /* height:150vh; */
   background-color: var(--mainBg);
   color:var(--mainText);
   padding:10vw;
   padding-top:0em;
+  padding-bottom:5vh;
 }
 .homeWrapper > p{
   margin-right:0px;
@@ -35,6 +36,14 @@ html[data-theme='light'] {
   cursor:pointer;
   float:right;
   padding-top:1em;
+  transition: color 200ms linear;
+  -webkit-transition: color 200ms linear;
+  -moz-transition: color 200ms linear;
+  -ms-transition: color 200ms linear;
+  -o-transition: color 200ms linear;
+}
+.homeWrapper button:hover{
+  color:var(--hightlight)
 }
 .moonIcon{
   color: black;
@@ -79,6 +88,7 @@ html[data-theme='light'] {
   flex-direction: column;
   align-items: center;
   font-size: 1.2em;
+  padding-bottom:8rem;
 
 }
 .homeWrapperSkills p{
@@ -88,10 +98,12 @@ html[data-theme='light'] {
 }
 .homeWrapperSkills ol{
   padding-top:3em;
-  width:50%;
+  width:70%;
   list-style-type: none;
   display: grid;
   grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+  align-items: center;
   gap:2em;
   color:var(--hightlight)
 }
@@ -116,6 +128,11 @@ html[data-theme='light'] {
   text-decoration: none;
   /* font-weight: bold; */
   font-size: 1.3rem;
+    transition: color 200ms linear;
+  -webkit-transition: color 200ms linear;
+  -moz-transition: color 200ms linear;
+  -ms-transition: color 200ms linear;
+  -o-transition: color 200ms linear;
 }
 .homeWrapperLinks a:hover{
   color:var(--hightlight)
@@ -133,6 +150,19 @@ html[data-theme='light'] {
 }
 .projects > *{
   margin-top: 2vh;
+}
+@media (max-width:1160px){
+  .homeWrapperText p:nth-of-type(1){
+    text-wrap: wrap;
+  }
+  .homeWrapperLinks{
+    min-width:50%;
+    padding:5%;
+    margin-right:10%;
+  }
+  .homeWrapperSkills ol{
+    width:90%;
+  }
 }
 @media (max-width:800px) {
   .homeWrapper, .homeWrapperMain{
@@ -156,6 +186,10 @@ html[data-theme='light'] {
   }
   .homeWrapperSkills ol{
     width:100%;
+    grid-template-columns:repeat(auto-fit, 10rem)
+  }
+  .homeWrapperSkills ol li{
+    text-wrap: nowrap;
   }
   .homeWrapperText p:nth-of-type(1){
     white-space:unset;

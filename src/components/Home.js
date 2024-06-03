@@ -86,6 +86,18 @@ function Home(){
         <div className="homeWrapperSkills">
           <p>Skills</p>
           <ol>
+            <li>Time Management</li>
+            <li>Dedication</li>
+            <li>Active listening</li>
+            <li>Problem-solving</li>
+            <li>Resilience</li>
+            <li>Growth mindset</li>
+          </ol>
+        </div>
+
+        <div className="homeWrapperSkills">
+          <p>Coding Skills</p>
+          <ol>
             <li>HTML</li>
             <li>CSS/SASS</li>
             <li>Javascript</li>

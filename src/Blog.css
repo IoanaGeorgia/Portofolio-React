@@ -19,10 +19,10 @@ div {
   margin: 0px;
   padding: 0px;
 }
-button{
+.blogWrapper button{
   transition: var(--buttonTransDuration)
 }
-button:hover{
+.blogWrapper button:hover{
   color:var(--grey);
 }
 p {
