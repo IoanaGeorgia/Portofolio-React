@@ -162,7 +162,16 @@ p.contentSubtitle {
 .mobileMenuWrapper button:hover {
   color: var(--grey);
 }
-
+@media(min-width:600px) and (max-width:1001px){
+  .blogImage{
+    width:80%;
+    display: block;
+    margin: auto;
+    margin-top:2rem;
+    margin-bottom: 2rem;
+    border-left:1.5rem solid black;
+  }
+}
 @media (min-width: 600px) {
   .blogHeaderLinks,
   .blogProfileLogo {
@@ -198,12 +207,26 @@ p.contentSubtitle {
     display: none;
   }
 }
-@media (min-width:1001px) and (max-width:1200px){
+@media (min-width:1001px) and (max-width:1201px){
   .blogImage{
-    width:40%!important;
+    width:30%;
+    max-width:40%;
+    margin-top:5%;
+  }
+  .blogDescription{
+    padding-top:1rem;
+    margin-top:-3vw !important;
+
   }
 }
-@media (min-width: 1000px) {
+@media (min-width:1001px) and (max-width:1151px){
+  .blogDescription{
+    margin-top:-7vw !important;
+    padding-top:1.5rem;
+
+  }
+}
+@media (min-width: 1002px) {
   .blogWrapper {
     padding: 3vh 10vh;
     font-size: var(--lgNormalFontSize);
@@ -217,7 +240,7 @@ p.contentSubtitle {
   .blogImage {
     position: absolute;
     width: 33rem;
-    height: 80vh;
+    /* height: 80vh; */
     right: 10vh;
     top: 10vh;
   }
@@ -234,7 +257,7 @@ p.contentSubtitle {
   .blogDescription {
     position: absolute;
     left: calc(100% - 40%);
-    top: 95vh;
+    top: 85%;
   }
 
   .blogContent {
@@ -266,7 +289,7 @@ p.contentSubtitle {
     margin-bottom: 2vh;
   }
   .blogContentMainWrapper {
-    margin-top: 30%;
+    margin-top: 20%;
     display: flex;
     align-items: baseline;
   }
@@ -296,7 +319,7 @@ p.contentSubtitle {
   .blogCircleImage {
     display: block;
     position: absolute;
-    top: 75vh;
+    margin-top:2rem;
     height: 50%;
     width: 40%;
   }

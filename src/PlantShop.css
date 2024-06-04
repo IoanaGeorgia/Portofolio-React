@@ -194,18 +194,18 @@
 }
 .ps_product img {
   width: 100%;
-  height: 30rem;
+  height: 25rem;
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
+  margin-left:4px;
+  margin-top:4px;
 }
 .ps_product:before {
   content: "";
-  width: 110%;
-  height: 40rem;
+  width: 100%;
+  height: 38rem;
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  border: 4px solid var(--lightGreen);
+  border: 4px solid var(--darkGreen);
   border-top-left-radius: 200px;
   border-top-right-radius: 200px;
   z-index: -1;
@@ -228,16 +228,20 @@
 .ps_productTag {
   border: 2px solid var(--lightGreen);
   color: var(--orange);
-  border-radius: 15px;
+  border-radius: 20px;
   width: fit-content;
-  padding: 0.5vh 2vh;
+  padding: 1vh 3vh;
   margin: 0.5rem;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 .ps_productTags {
   display: flex;
   justify-content: space-evenly;
-  margin-left: 3rem;
   margin-top: 4%;
+  padding:0px 2rem;
 }
 .ps_productTags button {
   color: white;
@@ -273,7 +277,6 @@
 }
 .ps_mainWrapper {
   position: relative;
-  min-height: 721vh;
 }
 .ps_cartTitle {
   color: white;
@@ -364,22 +367,6 @@
   height: 4rem;
   margin-right: 3rem;
 }
-/* .ps_slide-enter {
-    max-width: 0;
-    overflow: hidden;
-}
-.ps_slide-enter-active {
-    max-width: 80px;
-    transition: max-width .3s ease;
-}
-.ps_slide-leave {
-    max-width: 80px;
-}
-.ps_slide-leave-active {
-    max-width: 0;
-    transition: max-width .3s ease;
-    overflow: hidden;
-} */
 
 .content-enter {
   width: 0;
@@ -518,34 +505,15 @@
   flex-direction: column;
   align-items: flex-end;
 }
-/* .ps_myVaseContact form label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.ps_myVaseContact form {
-  width: 100%;
-  height: 100%;
-}
-.ps_myVaseContact form label:last-of-type {
-  margin-top: 5vh;
-}
-.ps_myVaseContact form input {
-  margin-top: 2%;
-  padding: 1vh;
-  outline: none;
-  border: 2px solid var(--lightGreen);
-  font-size: calc(var(--titleSize) - 2px);
-} */
-@media (max-width: 1500px) {
+
+@media (max-width: 1300px) {
   .ps_mainLanding > div:last-of-type p:last-of-type {
     backdrop-filter: blur(10px);
     background-color: #1e2920d6;
     padding: 2vh;
   }
   .ps_products {
-    column-gap: 10%;
+    column-gap: 5%;
     padding: 0%;
   }
   .ps_myVaseText p {
@@ -571,22 +539,32 @@
     border-top-right-radius: 250px;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1010px) {
   .ps_mainLanding > div:last-of-type p:last-of-type {
     top: 5vh;
     border: 2px solid var(--lightGreen);
   }
   .ps_products {
-    column-gap: 10%;
+    column-gap: 3%;
     padding: 0%;
-    grid-template-columns: auto;
+    grid-template-columns: auto auto;
     row-gap: 5%;
   }
+  .ps_product img{
+    height:20rem;
+  }
   .ps_product {
-    width: 70%;
+    width: unset;
     margin-left: 10%;
   }
-
+  .ps_productTags{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .ps_product p span{
+    margin-left:-10%;
+  }
   .ps_myVaseText p {
     backdrop-filter: blur(10px);
     background-color: var(--lightGreen);
@@ -649,9 +627,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height:unset;
     justify-content: space-evenly;
-    height: 10%;
-    padding-bottom: 0vh;
+    padding-bottom: 4vh;
   }
   .ps_footer * {
     text-align: center;
@@ -665,7 +643,7 @@
   }
 }
 
-@media (max-width: 785px) {
+@media (max-width: 800px) {
   .ps_header span {
     display: none;
   }
@@ -674,8 +652,8 @@
     font-size: calc(var(--subTitleSize) + 15px);
   }
   .ps_mainLanding > div:last-of-type p:last-of-type {
-    margin-top: 160%;
-    width: 170%;
+margin-top: 100%;
+    width: 100%;
     margin-left: -40%;
   }
   .ps_info {
@@ -693,7 +671,7 @@
     margin: 10vh 5vh;
   }
   .ps_myVase {
-    margin-top: 100vh;
+    margin-top:40%;
     padding: 10vh 2vh;
   }
   .ps_myVaseText {
@@ -705,8 +683,15 @@
   .ps_myVaseContact > div:last-of-type {
     padding-left: 5vh;
   }
+  .ps_myVaseContact > div:last-of-type > *{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+  }
   .ps_footer {
-    padding: 2vh 5vh;
+    padding: 2vh 15vh;
+    padding-top:3rem;
+    padding-bottom:4rem;
   }
   .ps_footer div {
     width: 100%;
@@ -718,22 +703,58 @@
     height: 25rem;
   }
   .ps_product::before {
-    height: 35rem;
+    height: 45rem;
   }
   .ps_product p span {
     margin-left: -1vh;
   }
 }
 
-@media (max-width:400px){
+@media (max-width:700px){
   body{
     overflow-x: hidden;
   }
+  .ps_landing{
+    overflow-x: hidden;
+  }
+  .ps_mainTitle{
+    margin-top:20%;
+  }
+   .ps_product p span{
+    margin-left:-5vh;
+   }
+.ps_productArea{
+  margin: unset;
+  margin-left:1vh;
+  margin-right:1vh;
+  height:unset;
+  padding-bottom:5vh;
+}
+  .ps_products{
+    display: flex;
+    flex-direction: column;
+    gap:10rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:10rem;
+
+  }
+    .ps_mainLanding > div:last-of-type p:last-of-type {
+    width: 200%;
+    margin-left: -100%;
+    top:30%;
+  }
     .ps_product {
     margin-left: -2%;
+    width:70%;
   }
     .ps_myVaseContact > div:last-of-type {
     padding-left: 0vh;
+  }
+  .ps_myVase{
+    margin-top:0%;
+    top:0px;
+    padding-top:0px;
   }
     .ps_myVaseText p {
     width: 90%;
@@ -745,4 +766,5 @@
   .ps_myVaseImage{
     margin-left:-5%;
   }
+
 }
