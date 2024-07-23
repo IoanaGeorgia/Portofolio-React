@@ -170,6 +170,10 @@ p.contentSubtitle {
     margin-top:2rem;
     margin-bottom: 2rem;
     border-left:1.5rem solid black;
+    
+  }
+  .blogHeaderLinks{
+    margin-left:1rem;
   }
 }
 @media (min-width: 600px) {
@@ -244,7 +248,7 @@ p.contentSubtitle {
     right: 10vh;
     top: 10vh;
   }
-  main > p {
+  .blogWrapper main > p {
     width: 50%;
   }
   .contentQuoteAuthor {

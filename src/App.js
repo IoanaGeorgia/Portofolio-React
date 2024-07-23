@@ -4,7 +4,8 @@ import Home from './components/Home';
 import Eccomerce from './components/Eccomerce';
 import Internal from './components/Internal';
 import Blog from './components/Blog';
-import PlantShop from './components/PlantShop'
+import PlantShop from './components/PlantShop';
+import Gallery from './components/Gallery'
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
           <Route exact path="/blog" element={<Blog />} />
 
           <Route exact path='/plantShop' element={<PlantShop />} />
+
+          <Route exact path='/gallery' element = {<Gallery />} />
         </Routes>
       </Router>
 

@@ -137,7 +137,7 @@ function Eccomerce(){
             <span>
               <FontAwesomeIcon icon={faGem} />
             </span>
-            <span className="logoText">Valentino</span>
+            <span className="ecc_logoText">Valentino</span>
           </div>
 
           <ol>
@@ -311,109 +311,6 @@ function Eccomerce(){
             <h2>Start from $160</h2>
             <button className="buyButton">Buy now</button>
           </div>
-
-          {/* 
-           <div className="mainDescription">
-            <div className="descriptionDetail">
-              <div>
-                <span>Description</span>
-                <button
-                  onClick={() => toggleDescription1(!isOpen1)}
-                  className={isOpen1 ? "closeDescription" : ""}
-                >
-                  +
-                </button>
-              </div>
-              <TransitionGroup>
-                <CSSTransition
-                  in={true}
-                  appear={true}
-                  key={isOpen1}
-                  classNames="slideText"
-                >
-                  <>
-                    {isOpen1 && (
-                      <div className="descriptionOpen">
-                        {perfumeInfo.description}
-                      </div>
-                    )}
-                  </>
-                </CSSTransition>
-              </TransitionGroup>
-            </div>
-
-            <div className="descriptionDetail">
-              <div>
-                <span>Reviews</span>
-                <button
-                  onClick={() => toggleDescription2(!isOpen2)}
-                  className={isOpen2 ? "closeDescription" : ""}
-                >
-                  +
-                </button>
-              </div>
-              <TransitionGroup>
-                <CSSTransition
-                  in={true}
-                  appear={true}
-                  key={isOpen2}
-                  classNames="slideText"
-                >
-                  <>
-                    {isOpen2 && (
-                      <div className="descriptionOpen">
-                        {perfumeInfo.reviews.map(function (data) {
-                          return (
-                            <div key={Object.keys(data)}>
-                              {Object.values(data)} - <i>{Object.keys(data)}</i>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </>
-                </CSSTransition>
-              </TransitionGroup>
-            </div>
-
-            <div className="descriptionDetail">
-              <div>
-                <span>Product faq</span>
-                <button
-                  onClick={() => toggleDescription3(!isOpen3)}
-                  className={isOpen3 ? "closeDescription" : ""}
-                >
-                  +
-                </button>
-              </div>
-              <TransitionGroup>
-                <CSSTransition
-                  in={true}
-                  appear={true}
-                  key={isOpen3}
-                  classNames="slideText"
-                >
-                  <>
-                    {isOpen3 && (
-                      <div className="descriptionOpen">
-                        {perfumeInfo.productFaq.map(function (data) {
-                          return (
-                            <div key={data[0]}>
-                              <b>{data[0]}</b>
-                              <div>{data[1]} </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </>
-                </CSSTransition>
-              </TransitionGroup>
-            </div>
-
-            <h2>Start from $160</h2>
-            <button className="buyButton">Buy now</button>
-          </div> */}
         </div>
 
         <div className="footer">

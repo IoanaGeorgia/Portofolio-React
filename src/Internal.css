@@ -37,7 +37,7 @@ button:active.copyIcon {
 .sideMenu > div {
   width: 100%;
 }
-.logo {
+.sideMenu .logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -401,8 +401,140 @@ p.subMenuCardTitle {
   font-weight: bolder;
 }
 .messageIcon {
-  padding-left: 4vh;
+  padding:0px;
+  padding-left: 2vh;
+  padding-bottom:2px;
   cursor: pointer;
+  border:none;
+  background-color: transparent;
+}
+.messageDiv{
+  position: absolute;
+  margin-left:17.6vw;
+  width:calc(100vw - 17.6vw);
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.43);
+  backdrop-filter: blur(2px);
+  z-index:1000;
+}
+.internalMessageBox{
+  width:50%;
+  height:80%;
+  background-color: rgb(241, 241, 241);
+  border:1px solid grey;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-sizing: border-box;
+  padding:1em 2.5rem;
+  padding-top:0.5rem;
+  padding-right:1rem;
+  accent-color:var(--lighterDarkGreen);
+  position: relative;
+  margin: auto;
+  margin-top: 2%;
+}
+.internalMessageBox span{
+  display: inline-block;
+  color:rgb(97, 97, 97);
+  min-width:10%;
+  text-align: right;
+}
+.internalMessageBox input{
+  width:70%;
+  background-color: white;
+  border:1px solid rgb(97, 97, 97);
+  padding:0.5rem;
+  padding-left:1rem;
+  margin-left:2rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  color:rgb(97, 97, 97);
+}
+.internalMessageBoxMessage{
+  border-top:1px solid rgb(97, 97, 97);
+  width:95%;
+  height:90%;
+}
+.internalMessageBoxMessage textarea{
+  margin-top:2rem;
+  box-sizing: border-box;
+  padding:1rem;
+  width:100%;
+  height:60%;
+  resize: none;
+  color:rgb(97, 97, 97);
+  border: 1px solid rgb(97, 97, 97);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.internalMessageBox button{
+  float: right;
+  padding:0.7rem;
+  padding-right:1.7rem;
+  padding-left:1.7rem;
+  background-color: var(--darkGreenHighlight);
+  color:white;
+  border-radius: 17px;
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
+  -ms-border-radius: 17px;
+  -o-border-radius: 17px;
+  margin-top:1rem;
+  transition:background-color 200ms linear ;
+  -webkit-transition:background-color 200ms linear ;
+  -moz-transition:background-color 200ms linear ;
+  -ms-transition:background-color 200ms linear ;
+  -o-transition:background-color 200ms linear ;
+}
+.internalMessageBox button span{
+  color:white;
+  margin-right:1rem;
+}
+.internalMessageBox button:hover{
+  background-color: var(--darkGreen);
+}
+.internalMessageBox .closeInternalMessageBox{
+  background-color: transparent;
+  border:none;
+  color:rgb(97, 97, 97);
+  font-size:2rem;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  position: unset;
+  margin-top:0px;
+  float:none;
+  margin-right:-5px;
+  padding:0rem;
+  right:10px;
+  position: relative;
+  margin-left:95%;
+}
+.internalMessageBox p:nth-of-type(1){
+  margin-top:0.2rem;
+}
+.internalMessageBox .closeInternalMessageBox:hover{
+  background-color: transparent;
+  border:none;
+  color:var(--lightGreen);
+  
+
+}
+.disabledBox *:not(button:first-of-type){
+  pointer-events: none;
+  filter:grayscale(70%) blur(3px);
+  -webkit-filter:grayscale(70%) blur(1px);
 }
 .issuedBadge {
   background-color: var(--lighterGrey);

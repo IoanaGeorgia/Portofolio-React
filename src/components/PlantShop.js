@@ -18,6 +18,7 @@ function PlantShop() {
   const [isOpenCart, openCart] = useState(false);
   const [isAlert, openAlert] = useState(false);
   const [isSameProduct, setSameProduct] = useState(false);
+  const [hoverIndex, setHoverIndex] = useState(null)
 
   //dribbble.com/shots/22189563-Shop-Website-Design
   let plantImages = [plant1, plant2, plant3, plant4, plant5, plant6];
@@ -94,17 +95,18 @@ function PlantShop() {
           >
             <div>
               <button onClick={() => openCart(false)} className="ps_cartClose">
-                x
+                +
               </button>
               <p className="ps_cartTitle">
                 Dear A., you cart contains the following items:
               </p>
               {shoppingCart.length ? (
-                <div>
+                <div className="ps_cartProdWrapper">
                   {shoppingCart.map((data, index) => {
                     return (
                       <div key={index} className="ps_cartProduct">
                         <span>
+                          <div>{index + 1}</div>
                           <img
                             src={
                               plantImages[
@@ -112,8 +114,8 @@ function PlantShop() {
                               ]
                             }
                           />
-                          <div>{index + 1}</div>
-                          <div>{data.name}</div>
+
+                          <div className="ps_cartProductName">{data.name}</div>
                         </span>
                         <span>
                           <div>${data.price}</div>
@@ -209,10 +211,20 @@ function PlantShop() {
           <div className="ps_products">
             {plantData.map((data, index) => {
               return (
-                <div key={index} className="ps_product">
+                <div key={index} className="ps_product" onMouseOver={()=>setHoverIndex(index)} onMouseLeave={()=>setHoverIndex(null)}>
                   <div>
                     <img src={`${plantImages[index]}`} />
+                    {index !== hoverIndex ? (
+                      <></>
+                    ) : (
+                      <div>
+                        <div className="ps_buttonWrapper">
+                          <button onClick={() => addToCart(data)}> Buy </button>
+                        </div>
+                      </div>
+                    )}
                   </div>
+
                   <p>
                     {data.name} <span>${data.price}</span>
                   </p>
@@ -223,9 +235,6 @@ function PlantShop() {
                         {tag}
                       </div>
                     ))}
-                  </div>
-                  <div className="ps_productTags">
-                    <button onClick={() => addToCart(data)}> Buy </button>
                   </div>
                 </div>
               );

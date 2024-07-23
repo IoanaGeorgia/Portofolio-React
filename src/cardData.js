@@ -19,7 +19,7 @@ const cardData = [
       },
       {
         name: "Margi Madison",
-        product: "Webflow Bsusiness Pro",
+        product: "Webflow Business Pro",
         amount: "59",
         period:'monthly'
       },

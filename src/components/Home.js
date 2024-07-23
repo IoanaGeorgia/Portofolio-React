@@ -64,6 +64,7 @@ function Home(){
               <Link to="/internalTool">Internal Banking App</Link>
               <Link to="./blog">Blog</Link>
               <Link to="./plantShop">PlantShop</Link>
+              <Link to='/gallery'>Gallery</Link>
             </div>
           </div>
 
