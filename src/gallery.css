@@ -690,7 +690,11 @@
         margin-top:20%;
     }
         .galleryAdvertisement ul li:hover, .galleryAdvertisement ul li:active, .galleryCallToAction button:hover, .galleryCallToAction button:active{
-    transform: scale(1.5, 1.5);
+    transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
 }
 
 }
@@ -756,6 +760,15 @@
 }
 .galleryCallToAction{
     height:100vh;
+    margin-top:20vh;
+}
+.galleryScrollTop{
+    width:20%;
+    
+}
+.galleryScrollTop:hover{
+    animation:none;
+    -webkit-animation:none;
 }
 .galleryAdvertisement{
     padding-bottom:40%;
@@ -774,7 +787,15 @@
 
 }
 .galleryFooter{
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+.galleryFooter div{
+    padding-right:0%;
+}
+.galleryFooter p{
+    text-align: center;
 }
 }
 
@@ -818,10 +839,12 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    
 }
 .gallerySocialsMobile ul li{
     list-style-type: none;
     font-size:1.5rem;
+    cursor: pointer;
 }
 .gallerySocialsMobile ul li > *{
     display: none;
